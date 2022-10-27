@@ -1,4 +1,10 @@
 {
   "Red tea-Water-Water": "Brewed red tea",
-  "Black tea-Water-Water": "Brewed black tea"
+  "Black tea-Water-Water": "Brewed black tea",
+  "Brewed red tea-Amoshroom-Cinnamon sugar": "Charm tea",
+  "Brewed red tea-Cinnamon sugar-Amoshroom": "Healing tea",
+  "Brewed red tea-Amoshroom-Amoshroom": "Suspicious tea",
+  "Brewed black tea-Amoshroom-Cinnamon sugar": "Infinity tea",
+  "Brewed black tea-Cinnamon sugar-Amoshroom": "Mage's tea",
+  "Brewed black tea-Amoshroom-Amoshroom": "Invisibility tea"
 } 

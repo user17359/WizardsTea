@@ -17,13 +17,15 @@ public class TooltipDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         delayedShowing = StartCoroutine(DelayedShowing());
     }
 
+    //tooltip is shown after a short delay to give a smooth feel
     private IEnumerator DelayedShowing()
     {
         yield return new WaitForSeconds(waitTime);
         if (display != "")
         {
             displayText.text = display;
-            tooltip.transform.SetParent(transform.parent.parent);
+            //ensure that tooltip is shown on top of other UI elements
+            tooltip.transform.SetParent(transform.parent.parent.parent);
             tooltip.transform.SetAsLastSibling();
             tooltip.SetActive(true);
         }
@@ -31,6 +33,7 @@ public class TooltipDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        //cancel showing tooltip
         StopCoroutine(delayedShowing);
         tooltip.SetActive(false);
     }

@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class RecipeDisplay : MonoBehaviour
 {
+    //recipe
     public Button[] recipeButtons;
     public Image[] recipeImages;
     public TooltipDisplay[] recipeTooltips;
+    //result
     public Button resultButton;
     public Image resultImage;
     public TooltipDisplay resultTooltip;
+
     public Sprite empty;
 
     public void AddIngredient(int position, Sprite sprite, string ID)

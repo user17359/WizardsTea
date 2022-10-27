@@ -39,6 +39,7 @@ public class CurrentRecipe : MonoBehaviour
         recipe[position] = ID;
         recipeDisplay.AddIngredient(position, jsonSprites.GetSprite(ID), ID);
         kettleAnimation.ChangeKettle(CheckOcupation());
+        //if recipe is full we activate the brewing options
         if(position == _recipeLenght - 1)
         {
             bool isValid = checkRecipe.Check(GetRecipe());
@@ -47,6 +48,7 @@ public class CurrentRecipe : MonoBehaviour
                 combineIngridients.SetActive(true);
             }
         }
+        //if recipe is not empty we activate the clear option
         else if (position == 0)
         {
             clear.SetActive(true);
@@ -62,10 +64,12 @@ public class CurrentRecipe : MonoBehaviour
         recipe[position] = "";
         recipeDisplay.RemoveIngridient(position);
         kettleAnimation.ChangeKettle(CheckOcupation());
+        //if recipe is not full we deactivate the brewing options
         if (position == _recipeLenght - 1)
         {
             combineIngridients.SetActive(false);
         }
+        //if recipe is empty we deactivate the clear option
         else if (position == 0)
         {
             clear.SetActive(false);

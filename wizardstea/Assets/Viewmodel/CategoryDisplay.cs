@@ -13,7 +13,7 @@ public class CategoryDisplay : MonoBehaviour
 
     private void Awake()
     {
-        stackButtons = new StackButton[collumns* rows];
+        stackButtons = new StackButton[collumns * rows];
         Vector2 spawnCord = transform.position;
         for(int x = 0; x < rows; x++)
         {
@@ -24,6 +24,7 @@ public class CategoryDisplay : MonoBehaviour
                 
                 spawnCord += new Vector2(buttonDistance.x, 0);
             }
+            //we move spawn point to start of new row
             spawnCord +=  new Vector2(buttonDistance.x * -collumns, buttonDistance.y);
         }
     }

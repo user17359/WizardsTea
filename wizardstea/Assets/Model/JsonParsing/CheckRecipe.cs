@@ -15,11 +15,10 @@ public class CheckRecipe : MonoBehaviour
     {
         //loading json file
         var textFile = Resources.Load<TextAsset>("Recipes");
-        //loading json file as a dictionary to easily convert names into paths
+        //loading json file as a dictionary to easily check recipes
         translation = JsonConvert.DeserializeObject<Dictionary<string, string>>(textFile.text);
     }
 
-    //Translating item name into its sprite
 
     public bool Check(string recipe)
     {

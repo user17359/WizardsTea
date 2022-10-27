@@ -3,5 +3,13 @@
   "Black tea": "Icons/BlackTea",
   "Water": "Icons/Water",
   "Brewed red tea": "Icons/RedTeaBrew",
-  "Brewed black tea": "Icons/BlackTeaBrew"
+  "Brewed black tea": "Icons/BlackTeaBrew",
+  "Amoshroom": "Icons/Amoshroom",
+  "Cinnamon sugar": "Icons/CinnamonSugar",
+  "Healing tea": "Icons/HealthTea",
+  "Infinity tea": "Icons/InfinityTea",
+  "Invisibility tea": "Icons/InvisibiltyTea",
+  "Mage's tea": "Icons/MagesTea",
+  "Suspicious tea": "Icons/SuspiciousTea",
+  "Charm tea" : "Icons/CharmTea"
 } 
