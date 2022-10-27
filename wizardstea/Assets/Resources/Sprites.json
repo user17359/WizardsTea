@@ -1,7 +1,7 @@
 {
-  "GreenTeaLeaves": "Icons/GreenTea",
-  "BlackTeaLeaves": "Icons/BlackTea",
+  "Red tea": "Icons/RedTea",
+  "Black tea": "Icons/BlackTea",
   "Water": "Icons/Water",
-  "GreenTea": "Icons/GreenTeaBrew",
-  "BlackTea": "Icons/BlackTeaBrew"
+  "Brewed red tea": "Icons/RedTeaBrew",
+  "Brewed black tea": "Icons/BlackTeaBrew"
 } 

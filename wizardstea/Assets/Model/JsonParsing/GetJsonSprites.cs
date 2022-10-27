@@ -18,9 +18,16 @@ public class GetJsonSprites : MonoBehaviour
     //Translating item name into its sprite
     public Sprite GetSprite(string id)
     {
-        string path = translation[id];
-        //loading sprite at given path
-        Sprite sprite = Resources.Load<Sprite>(path);
-        return sprite;
+        if (translation.ContainsKey(id))
+        {
+            string path = translation[id];
+            //loading sprite at given path
+            Sprite sprite = Resources.Load<Sprite>(path);
+            return sprite;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

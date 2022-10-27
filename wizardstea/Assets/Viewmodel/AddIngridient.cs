@@ -6,6 +6,7 @@ public class AddIngridient : MonoBehaviour
 {
     public string ID;
     private CurrentRecipe _currentRecipe;
+    public ItemCategories itemCategory;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class AddIngridient : MonoBehaviour
         }
         else
         {
-            _currentRecipe.AddIngredient(position, ID);
+            _currentRecipe.AddIngredient(position, ID, itemCategory);
         }
     }
 }

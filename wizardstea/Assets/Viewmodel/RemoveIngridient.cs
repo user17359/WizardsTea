@@ -14,6 +14,6 @@ public class RemoveIngridient : MonoBehaviour
 
     public void Remove()
     {
-        _currentRecipe.RemoveIngridient(position);
+        _currentRecipe.RemoveIngridient(position, false);
     }
 }
