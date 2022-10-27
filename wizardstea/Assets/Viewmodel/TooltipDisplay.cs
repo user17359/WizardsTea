@@ -11,6 +11,14 @@ public class TooltipDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public TMP_Text displayText;
     private Coroutine delayedShowing;
     public float waitTime;
+    private Transform canvas;
+    private Transform originalParent;
+
+    private void Start()
+    {
+        canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
+        originalParent = transform.parent;
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -25,7 +33,7 @@ public class TooltipDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         {
             displayText.text = display;
             //ensure that tooltip is shown on top of other UI elements
-            tooltip.transform.SetParent(transform.parent.parent.parent);
+            tooltip.transform.SetParent(canvas);
             tooltip.transform.SetAsLastSibling();
             tooltip.SetActive(true);
         }
@@ -35,6 +43,7 @@ public class TooltipDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         //cancel showing tooltip
         StopCoroutine(delayedShowing);
+        tooltip.transform.SetParent(originalParent);
         tooltip.SetActive(false);
     }
 }

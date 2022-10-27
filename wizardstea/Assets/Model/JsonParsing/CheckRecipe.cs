@@ -10,6 +10,7 @@ public class CheckRecipe : MonoBehaviour
     public RecipeDisplay recipeDisplay;
     public GetJsonSprites jsonSprites;
     public GetResult getResult;
+    public Recipebook recipebook;
 
     void Awake()
     {
@@ -17,6 +18,34 @@ public class CheckRecipe : MonoBehaviour
         var textFile = Resources.Load<TextAsset>("Recipes");
         //loading json file as a dictionary to easily check recipes
         translation = JsonConvert.DeserializeObject<Dictionary<string, string>>(textFile.text);
+    }
+
+    private void Start()
+    {
+        //resizing scrolling view to fit all recipes
+        recipebook.SetContentHeight(translation.Count);
+
+        //displaying all recipes
+        foreach (var item in translation)
+        {
+            string[] recipe = SeparateIngridients(item.Key);
+            Sprite[] recipeSprites = new Sprite[recipe.Length];
+
+            for(int i = 0; i < recipe.Length; i++)
+            {
+                recipeSprites[i] = jsonSprites.GetSprite(recipe[i]);
+            }
+
+            Sprite resultSprite = jsonSprites.GetSprite(item.Value);
+
+            recipebook.AddRecipe(recipe, recipeSprites, item.Value, resultSprite);
+        }
+    }
+
+    private string[] SeparateIngridients(string recipe)
+    {
+        string[] result = recipe.Split('-');
+        return result;
     }
 
 
